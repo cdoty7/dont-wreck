@@ -66,8 +66,8 @@ https://trello.com/b/yKylf9qF/java-mastery-project
     - View  
       mainMenu()  -May make separate menu class as in week 4 assessment  
       displayReservations()  
-      promptHostEmail()
-      promptGuestEmail()
+      promptHostEmail()  
+      promptGuestEmail()  
       displayHeader()  
       displayMessage()  
 - Spring DI
