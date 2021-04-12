@@ -45,7 +45,7 @@ https://trello.com/b/yKylf9qF/java-mastery-project
       viewAll()  
       addReservation()  
       editReservation()  
-      cancelReservation()
+      cancelReservation()  
       validate()  
       validateNulls()  
       validateFields()
