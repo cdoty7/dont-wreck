@@ -1,4 +1,4 @@
-#Don't Wreck My House
+#Don't Wreck My House  
 **Project Time Estimate: 23:30**  
 Time breakdowns on Trello board: 
 https://trello.com/b/yKylf9qF/java-mastery-project
@@ -12,7 +12,7 @@ https://trello.com/b/yKylf9qF/java-mastery-project
 - Create classes
 - Spring DI
 
-##Data
+##Data  
 ###Reservation Repository
 - View Reservations
     - Implement
@@ -27,7 +27,7 @@ https://trello.com/b/yKylf9qF/java-mastery-project
     - Implement
     - Write tests
 
-##Domain
+##Domain  
 ###Reservation Service
 - View Reservations
   - Write tests
@@ -37,17 +37,17 @@ https://trello.com/b/yKylf9qF/java-mastery-project
   - Write tests
 - Cancel Reservation
   - Write tests
-- Validation
+- Validation  
 ###Result
 
-##UI
-####ConsoleIO
-####Controller
+##UI  
+####ConsoleIO  
+####Controller  
 - View Reservations
 - Make Reservation
 - Edit Reservation
 - Cancel Reservation
-####View
+####View  
 - View Reservations
 - Make Reservation
 - Edit Reservation
