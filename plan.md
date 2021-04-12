@@ -56,11 +56,11 @@ https://trello.com/b/yKylf9qF/java-mastery-project
   - **UI**
     - Controller
       run()  
-      runMenu()
+      runMenu()  
       viewAll()  
       addReservation()  
       editReservation()  
-      cancelReservation()
+      cancelReservation()  
       getHost()  
       getGuest()  
     - View  
