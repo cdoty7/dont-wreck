@@ -41,12 +41,12 @@ https://trello.com/b/yKylf9qF/java-mastery-project
 ###Result
 
 ##UI  
-####ConsoleIO  
 ####Controller  
 - View Reservations
 - Make Reservation
 - Edit Reservation
 - Cancel Reservation  
+
 ####View  
 - View Reservations
 - Make Reservation
