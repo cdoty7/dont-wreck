@@ -46,7 +46,7 @@ https://trello.com/b/yKylf9qF/java-mastery-project
 - View Reservations
 - Make Reservation
 - Edit Reservation
-- Cancel Reservation
+- Cancel Reservation  
 ####View  
 - View Reservations
 - Make Reservation
