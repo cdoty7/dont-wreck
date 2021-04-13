@@ -4,13 +4,13 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 public class Host {
-    UUID hostId;
+    private UUID hostId;
     private String lastName;
     private String hostEmail;
     private String city;
     private String state;
-    BigDecimal standardRate;
-    BigDecimal weekendRate;
+    private BigDecimal standardRate;
+    private BigDecimal weekendRate;
 
     public Host(UUID hostId, String lastName, String hostEmail, String city, String state, BigDecimal standardRate, BigDecimal weekendRate) {
         this.hostId = hostId;
@@ -22,6 +22,8 @@ public class Host {
         this.weekendRate = weekendRate;
     }
 
+    public Host() {
+    }
 
     public String getLastName() {
         return lastName;
@@ -37,5 +39,45 @@ public class Host {
 
     public String getState() {
         return state;
+    }
+
+    public UUID getHostId() {
+        return hostId;
+    }
+
+    public void setHostId(UUID hostId) {
+        this.hostId = hostId;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setHostEmail(String hostEmail) {
+        this.hostEmail = hostEmail;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public BigDecimal getStandardRate() {
+        return standardRate;
+    }
+
+    public void setStandardRate(BigDecimal standardRate) {
+        this.standardRate = standardRate;
+    }
+
+    public BigDecimal getWeekendRate() {
+        return weekendRate;
+    }
+
+    public void setWeekendRate(BigDecimal weekendRate) {
+        this.weekendRate = weekendRate;
     }
 }

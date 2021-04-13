@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface HostRepository {
 
-    List<Host> findAll();
+    List<Host> findAll() throws DataAccessException;
 }

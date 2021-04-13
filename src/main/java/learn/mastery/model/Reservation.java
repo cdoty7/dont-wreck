@@ -64,10 +64,10 @@ public class Reservation {
         BigDecimal totalWeekend = null;
 
         for (; start.compareTo(end) < 0; start = start.plusDays(1)) {
-            if (start.getDayOfWeek() != DayOfWeek.SATURDAY && start.getDayOfWeek() != DayOfWeek.SUNDAY) {
+            if (start.getDayOfWeek() != DayOfWeek.FRIDAY && start.getDayOfWeek() != DayOfWeek.SATURDAY) {
                 totalWeekday = standardRate.add(standardRate);
             }
-            if (start.getDayOfWeek() == DayOfWeek.SATURDAY || start.getDayOfWeek() == DayOfWeek.SUNDAY) {
+            if (start.getDayOfWeek() == DayOfWeek.FRIDAY || start.getDayOfWeek() == DayOfWeek.SATURDAY) {
                 totalWeekend = weekendRate.add(weekendRate);
             }
         }

@@ -2,7 +2,9 @@ package learn.mastery.ui;
 
 import learn.mastery.domain.HostService;
 import learn.mastery.domain.ReservationService;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Controller {
     private final ReservationService reservationService;
     private final HostService hostService;
@@ -15,7 +17,7 @@ public class Controller {
     }
 
     public void run(){
-
+        System.out.println("running");
     }
 
     public void runMenu(){

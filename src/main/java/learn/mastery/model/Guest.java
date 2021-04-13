@@ -6,13 +6,6 @@ public class Guest {
     private String lastName;
     private String guestEmail;
 
-    public Guest(int guestId, String firstName, String lastName, String guestEmail) {
-        this.guestId = guestId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.guestEmail = guestEmail;
-    }
-
     public int getGuestId() {
         return guestId;
     }
@@ -27,5 +20,21 @@ public class Guest {
 
     public String getGuestEmail() {
         return guestEmail;
+    }
+
+    public void setGuestId(int guestId) {
+        this.guestId = guestId;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setGuestEmail(String guestEmail) {
+        this.guestEmail = guestEmail;
     }
 }

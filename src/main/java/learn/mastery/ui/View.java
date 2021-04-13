@@ -1,7 +1,9 @@
 package learn.mastery.ui;
 
+import org.springframework.stereotype.Component;
 import java.util.Scanner;
 
+@Component
 public class View {
 
     Scanner console = new Scanner(System.in);
@@ -27,6 +29,6 @@ public class View {
     }
 
     public void displayMessage(){
-        
+
     }
 }

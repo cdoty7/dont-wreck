@@ -9,5 +9,8 @@
         <module name="dont_wreck" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dont_wreck" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

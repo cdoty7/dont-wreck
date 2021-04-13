@@ -3,9 +3,10 @@ package learn.mastery.domain;
 import learn.mastery.data.HostRepository;
 import learn.mastery.data.ReservationRepository;
 import learn.mastery.model.Reservation;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ReservationService {
 
     private final ReservationRepository reservationRepository;
