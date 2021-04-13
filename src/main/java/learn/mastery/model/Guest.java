@@ -4,13 +4,13 @@ public class Guest {
     int guestId;
     private String firstName;
     private String lastName;
-    private String email;
+    private String guestEmail;
 
-    public Guest(int guestId, String firstName, String lastName, String email) {
+    public Guest(int guestId, String firstName, String lastName, String guestEmail) {
         this.guestId = guestId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
+        this.guestEmail = guestEmail;
     }
 
     public int getGuestId() {
@@ -25,7 +25,7 @@ public class Guest {
         return lastName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getGuestEmail() {
+        return guestEmail;
     }
 }
