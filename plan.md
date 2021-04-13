@@ -42,6 +42,8 @@ https://trello.com/b/yKylf9qF/java-mastery-project
       writeAll()
     - HostRepository  
     - HostFileRepository  
+      -findByEmail()  
+    -GuestRepository  
       -findByEmail()
   - **Domain**
     - ReservationService
