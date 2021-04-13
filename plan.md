@@ -40,6 +40,9 @@ https://trello.com/b/yKylf9qF/java-mastery-project
       getFilePath()  
       serialize()  
       writeAll()
+    - HostRepository  
+    - HostFileRepository  
+      -findByEmail()
   - **Domain**
     - ReservationService
       viewAll()  
