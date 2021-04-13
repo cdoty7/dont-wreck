@@ -6,7 +6,8 @@ https://trello.com/b/yKylf9qF/java-mastery-project
 ##Setup and Models
 - **Create packages**
 - **Create models** 
-  - **Host**  
+  - **Host**
+    UUID hostId
     String lastName  
     String email  
     String phone  
@@ -17,23 +18,21 @@ https://trello.com/b/yKylf9qF/java-mastery-project
     BigDecimal standardRate  
     BigDecimal weekendRate
   - **Guest**  
-    int guestID
+    int guestId
     String firstName  
     String lastName  
-    String email  
-    String phone  
-    String state
+    String email
   - **Reservation**  
-    int reservationID  
+    int reservationId  
     LocalDate startDate  
     LocalDate endDate  
-    int guestID  
+    int guestId  
     BigDecimal total
 - **Create classes**  
   - **Data**
     - ReservationRepository
     - ReservationFileRepository  
-      viewAll()  
+      viewReservationByHost()  
       addReservation()  
       editReservation()  
       cancelReservation()  
@@ -42,12 +41,10 @@ https://trello.com/b/yKylf9qF/java-mastery-project
       writeAll()
     - HostRepository  
     - HostFileRepository  
-      -findByEmail()  
-    -GuestRepository  
-      -findByEmail()
+      -findAll()
   - **Domain**
     - ReservationService
-      viewAll()  
+      viewReservationByHost()  
       addReservation()  
       editReservation()  
       cancelReservation()  
@@ -62,7 +59,7 @@ https://trello.com/b/yKylf9qF/java-mastery-project
     - Controller
       run()  
       runMenu()  
-      viewAll()  
+      viewReservationByHost()   
       addReservation()  
       editReservation()  
       cancelReservation()  
