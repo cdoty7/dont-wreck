@@ -25,6 +25,12 @@ public class Host {
     public Host() {
     }
 
+    public Host(UUID hostId, BigDecimal standardRate, BigDecimal weekendRate) {
+        this.hostId = hostId;
+        this.standardRate = standardRate;
+        this.weekendRate = weekendRate;
+    }
+
     public String getLastName() {
         return lastName;
     }

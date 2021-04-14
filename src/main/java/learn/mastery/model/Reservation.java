@@ -6,18 +6,22 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 public class Reservation {
+    private UUID hostId;
     private int reservationId;
     private LocalDate startDate;
     private LocalDate endDate;
-    private int guestId;
+    private String guestId;
     private BigDecimal total;
 
-    public Reservation(int reservationId, LocalDate startDate, LocalDate endDate, int guestId, BigDecimal total) {
+    public Reservation(int reservationId, LocalDate startDate, LocalDate endDate, String guestId, BigDecimal total) {
         this.reservationId = reservationId;
         this.startDate = startDate;
         this.endDate = endDate;
         this.guestId = guestId;
         this.total = total;
+    }
+
+    public Reservation() {
     }
 
     public int getReservationId() {
@@ -44,11 +48,11 @@ public class Reservation {
         this.endDate = endDate;
     }
 
-    public int getGuestId() {
+    public String getGuestId() {
         return guestId;
     }
 
-    public void setGuestId(int guestId) {
+    public void setGuestId(String guestId) {
         this.guestId = guestId;
     }
 
@@ -56,22 +60,33 @@ public class Reservation {
         return total;
     }
 
-    public BigDecimal setTotal(UUID hostId, String lastName, String email, String city, String state, BigDecimal standardRate, BigDecimal weekendRate) {
-        Host host = new Host(hostId, lastName, email, city, state, standardRate, weekendRate);
-        LocalDate start = getStartDate();
-        LocalDate end = getEndDate();
-        BigDecimal totalWeekday = null;
-        BigDecimal totalWeekend = null;
+    public void setTotal(BigDecimal total) {
+        this.total = total;
 
-        for (; start.compareTo(end) < 0; start = start.plusDays(1)) {
-            if (start.getDayOfWeek() != DayOfWeek.FRIDAY && start.getDayOfWeek() != DayOfWeek.SATURDAY) {
-                totalWeekday = standardRate.add(standardRate);
-            }
-            if (start.getDayOfWeek() == DayOfWeek.FRIDAY || start.getDayOfWeek() == DayOfWeek.SATURDAY) {
-                totalWeekend = weekendRate.add(weekendRate);
-            }
-        }
+//        Host host = new Host();
+//        LocalDate start = getStartDate();
+//        LocalDate end = getEndDate();
+//        BigDecimal totalWeekday = null;
+//        BigDecimal totalWeekend = null;
+//
+//        for (; start.compareTo(end) < 0; start = start.plusDays(1)) {
+//            if (start.getDayOfWeek() != DayOfWeek.FRIDAY && start.getDayOfWeek() != DayOfWeek.SATURDAY) {
+//                totalWeekday = totalWeekday.add(host.getStandardRate());
+//            }
+//            if (start.getDayOfWeek() == DayOfWeek.FRIDAY || start.getDayOfWeek() == DayOfWeek.SATURDAY) {
+//                totalWeekend = totalWeekend.add(host.getWeekendRate());
+//            }
+//        }
+//
+//        return totalWeekday.add(totalWeekend);
+//    }
+    }
 
-        return totalWeekday.add(totalWeekend);
+    public UUID getHostId() {
+        return hostId;
+    }
+
+    public void setHostId(UUID hostId) {
+        this.hostId = hostId;
     }
 }
