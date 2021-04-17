@@ -4,11 +4,13 @@ import learn.mastery.data.DataAccessException;
 import learn.mastery.domain.GuestService;
 import learn.mastery.domain.HostService;
 import learn.mastery.domain.ReservationService;
+import learn.mastery.domain.Result;
 import learn.mastery.model.Guest;
 import learn.mastery.model.Host;
 import learn.mastery.model.Reservation;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
@@ -61,30 +63,50 @@ public class Controller {
 
     public void viewReservationsByHost() throws DataAccessException {
         view.displayHeader("View Reservations for Host");
-        String hostEmail = view.promptHostEmail();
-        Host host = hostService.findByEmail(hostEmail);
+        Host host = getHost();
+
         List<Reservation> reservations = reservationService.viewReservationsByHost(host);
         view.displayReservations(reservations);
+
         Boolean isRunning = true;
     }
 
     public void addReservation() throws DataAccessException {
         view.displayHeader("Add Reservation");
-        String hostEmail = view.promptHostEmail();
-        Host host = hostService.findByEmail(hostEmail);
-        String guestEmail = view.promptGuestEmail();
-        Guest guest = guestService.findByEmail(guestEmail);
+        Host host = getHost();
+        UUID hostId = host.getHostId();
+
+        Guest guest = getGuest();
+
         List<Reservation> reservations = reservationService.viewReservationsByHost(host);
         view.displayReservations(reservations);
 
-        
+        LocalDate startDate = view.promptStartDate();
+        LocalDate endDate = view.promptStartDate();
+        Reservation reservation = new Reservation();
+        Result result = reservationService.addReservation(reservation, hostId);
+
+        if (result.isSuccess()) {
+            view.displayMessage("Reservation added.");
+        }
     }
 
     public void editReservation(){
-
+        view.displayHeader("Edit Reservation");
     }
 
     public void cancelReservation(){
+        view.displayHeader("Delete Reservation");
 
+    }
+
+    private Host getHost() throws DataAccessException {
+        String hostEmail = view.promptHostEmail();
+        return hostService.findByEmail(hostEmail);
+    }
+
+    private Guest getGuest() throws DataAccessException {
+        String guestEmail = view.promptGuestEmail();
+        Guest guest = guestService.findByEmail(guestEmail);
     }
 }

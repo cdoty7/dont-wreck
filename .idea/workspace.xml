@@ -5,39 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e74fc3f-077c-45a7-8284-f6cfbd7b4c7d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/hosts.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/data/GuestFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/data/GuestFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/data/GuestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/data/GuestRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/data/HostFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/data/HostFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/data/ReservationFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/data/ReservationFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/GuestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/GuestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/ReservationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/model/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/model/Guest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/model/Host.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/model/Host.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/model/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/model/Reservation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/learn/mastery/data/HostFileRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/mastery/data/HostFileRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/learn/mastery/data/HostRepositoryDouble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/mastery/data/HostRepositoryDouble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/learn/mastery/domain/ReservationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/mastery/domain/ReservationServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/data/GuestFileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/data/GuestFileRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/data/HostFileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/data/HostFileRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/data/HostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/data/HostRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/data/ReservationFileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/data/ReservationFileRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/domain/HostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/domain/HostService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/domain/ReservationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/domain/ReservationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/model/Guest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/model/Guest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/model/Host.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/model/Host.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/model/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/model/Reservation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/ui/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/ui/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/ui/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/ui/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/learn/mastery/data/HostFileRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/learn/mastery/data/HostFileRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/learn/mastery/data/HostRepositoryDouble.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/learn/mastery/data/HostRepositoryDouble.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/learn/mastery/domain/ReservationServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/learn/mastery/domain/ReservationServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +26,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sustainable-Foraging" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -107,5 +77,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

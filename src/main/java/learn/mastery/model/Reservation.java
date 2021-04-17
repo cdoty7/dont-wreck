@@ -45,24 +45,6 @@ public class Reservation {
 
     public void setTotal(BigDecimal total) {
         this.total = total;
-
-//        Host host = new Host();
-//        LocalDate start = getStartDate();
-//        LocalDate end = getEndDate();
-//        BigDecimal totalWeekday = null;
-//        BigDecimal totalWeekend = null;
-//
-//        for (; start.compareTo(end) < 0; start = start.plusDays(1)) {
-//            if (start.getDayOfWeek() != DayOfWeek.FRIDAY && start.getDayOfWeek() != DayOfWeek.SATURDAY) {
-//                totalWeekday = totalWeekday.add(host.getStandardRate());
-//            }
-//            if (start.getDayOfWeek() == DayOfWeek.FRIDAY || start.getDayOfWeek() == DayOfWeek.SATURDAY) {
-//                totalWeekend = totalWeekend.add(host.getWeekendRate());
-//            }
-//        }
-//
-//        return totalWeekday.add(totalWeekend);
-//    }
     }
 
     public UUID getHostId() {
