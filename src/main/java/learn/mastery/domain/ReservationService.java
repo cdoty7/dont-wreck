@@ -25,7 +25,8 @@ public class ReservationService {
     }
 
 
-    public List<Reservation> viewReservationsByHost(UUID hostId) throws DataAccessException {
+    public List<Reservation> viewReservationsByHost(Host host) throws DataAccessException {
+        UUID hostId = host.getHostId();
         return reservationRepository.viewReservationsByHost(hostId);
     }
 
@@ -64,7 +65,7 @@ public class ReservationService {
             result.addErrorMessage("Host email is required.");
         }
         //No guest email entered
-        if(reservation.getGuestId() == null || reservation.getGuestId().isEmpty()) {
+        if(reservation.getGuest().getGuestId() == null || reservation.getGuest().getGuestId().isEmpty()) {
             result.addErrorMessage("Guest email is required.");
         }
         //Host has no reservations

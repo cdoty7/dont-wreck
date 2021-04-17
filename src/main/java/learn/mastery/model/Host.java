@@ -1,6 +1,7 @@
 package learn.mastery.model;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 
 public class Host {
@@ -11,6 +12,10 @@ public class Host {
     private String state;
     private BigDecimal standardRate;
     private BigDecimal weekendRate;
+
+    public Host(String hostEmail) {
+        this.hostEmail = hostEmail;
+    }
 
     public Host(UUID hostId, String lastName, String hostEmail, String city, String state, BigDecimal standardRate, BigDecimal weekendRate) {
         this.hostId = hostId;
@@ -30,6 +35,7 @@ public class Host {
         this.standardRate = standardRate;
         this.weekendRate = weekendRate;
     }
+
 
     public String getLastName() {
         return lastName;

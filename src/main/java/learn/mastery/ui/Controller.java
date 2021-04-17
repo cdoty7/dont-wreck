@@ -1,8 +1,10 @@
 package learn.mastery.ui;
 
 import learn.mastery.data.DataAccessException;
+import learn.mastery.domain.GuestService;
 import learn.mastery.domain.HostService;
 import learn.mastery.domain.ReservationService;
+import learn.mastery.model.Guest;
 import learn.mastery.model.Host;
 import learn.mastery.model.Reservation;
 import org.springframework.stereotype.Component;
@@ -14,11 +16,13 @@ import java.util.UUID;
 public class Controller {
     private final ReservationService reservationService;
     private final HostService hostService;
+    private final GuestService guestService;
     private final View view;
 
-    public Controller(ReservationService reservationService, HostService hostService, View view) {
+    public Controller(ReservationService reservationService, HostService hostService, GuestService guestService, View view) {
         this.reservationService = reservationService;
         this.hostService = hostService;
+        this.guestService = guestService;
         this.view = view;
     }
 
@@ -57,16 +61,23 @@ public class Controller {
 
     public void viewReservationsByHost() throws DataAccessException {
         view.displayHeader("View Reservations for Host");
-        Host host = new Host();
-        hostService.findByEmail(view.promptHostEmail());
-        UUID hostId = host.getHostId();
-        List<Reservation> reservations = reservationService.viewReservationsByHost(hostId);
+        String hostEmail = view.promptHostEmail();
+        Host host = hostService.findByEmail(hostEmail);
+        List<Reservation> reservations = reservationService.viewReservationsByHost(host);
         view.displayReservations(reservations);
         Boolean isRunning = true;
     }
 
-    public void addReservation(){
+    public void addReservation() throws DataAccessException {
+        view.displayHeader("Add Reservation");
+        String hostEmail = view.promptHostEmail();
+        Host host = hostService.findByEmail(hostEmail);
+        String guestEmail = view.promptGuestEmail();
+        Guest guest = guestService.findByEmail(guestEmail);
+        List<Reservation> reservations = reservationService.viewReservationsByHost(host);
+        view.displayReservations(reservations);
 
+        
     }
 
     public void editReservation(){

@@ -1,12 +1,12 @@
 package learn.mastery.model;
 
 public class Guest {
-    int guestId;
+    String guestId;
     private String firstName;
     private String lastName;
     private String guestEmail;
 
-    public int getGuestId() {
+    public String getGuestId() {
         return guestId;
     }
 
@@ -22,7 +22,7 @@ public class Guest {
         return guestEmail;
     }
 
-    public void setGuestId(int guestId) {
+    public void setGuestId(String guestId) {
         this.guestId = guestId;
     }
 

@@ -4,6 +4,7 @@ import learn.mastery.data.DataAccessException;
 import learn.mastery.data.HostRepository;
 import learn.mastery.data.HostRepositoryDouble;
 import learn.mastery.data.ReservationRepositoryDouble;
+import learn.mastery.model.Guest;
 import learn.mastery.model.Host;
 import learn.mastery.model.Reservation;
 import org.junit.jupiter.api.Test;
@@ -24,6 +25,7 @@ class ReservationServiceTest {
     void addReservationShouldAdd() throws DataAccessException {
         Reservation reservation = new Reservation();
         Host host = new Host();
+        Guest guest = new Guest();
         host.setStandardRate(new BigDecimal("150"));
         host.setWeekendRate(new BigDecimal("150"));
         reservation.setHostId(hostId);
@@ -40,6 +42,7 @@ class ReservationServiceTest {
     void addReservationShouldNotAddIfStartDateMissing() throws DataAccessException {
         Reservation reservation = new Reservation();
         Host host = new Host();
+        Guest guest = new Guest();
         host.setStandardRate(new BigDecimal("150"));
         host.setWeekendRate(new BigDecimal("150"));
         reservation.setHostId(hostId);

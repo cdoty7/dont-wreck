@@ -7,22 +7,13 @@ import java.util.UUID;
 
 public class Reservation {
     private UUID hostId;
+    private Host host;
     private int reservationId;
     private LocalDate startDate;
     private LocalDate endDate;
+    private Guest guest;
     private String guestId;
     private BigDecimal total;
-
-    public Reservation(int reservationId, LocalDate startDate, LocalDate endDate, String guestId, BigDecimal total) {
-        this.reservationId = reservationId;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.guestId = guestId;
-        this.total = total;
-    }
-
-    public Reservation() {
-    }
 
     public int getReservationId() {
         return reservationId;
@@ -46,14 +37,6 @@ public class Reservation {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
-    }
-
-    public String getGuestId() {
-        return guestId;
-    }
-
-    public void setGuestId(String guestId) {
-        this.guestId = guestId;
     }
 
     public BigDecimal getTotal() {
@@ -88,5 +71,29 @@ public class Reservation {
 
     public void setHostId(UUID hostId) {
         this.hostId = hostId;
+    }
+
+    public Host getHost() {
+        return host;
+    }
+
+    public void setHost(Host host) {
+        this.host = host;
+    }
+
+    public Guest getGuest() {
+        return guest;
+    }
+
+    public void setGuest(Guest guest) {
+        this.guest = guest;
+    }
+
+    public String getGuestId() {
+        return guestId;
+    }
+
+    public void setGuestId(String guestId) {
+        this.guestId = guestId;
     }
 }

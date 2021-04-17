@@ -38,9 +38,16 @@ public class GuestFileRepository implements GuestRepository{
         return guests;
     }
 
+    public Guest findByEmail(String guestEmail) throws DataAccessException {
+        return findAll().stream()
+                .filter(guest -> guest.getGuestEmail().equals(guestEmail))
+                .findFirst()
+                .orElse(null);
+    }
+
     private Guest deserialize(String[] fields) {
         Guest guest = new Guest();
-        guest.setGuestId(Integer.parseInt(fields[0]));
+        guest.setGuestId(fields[0]);
         guest.setFirstName(fields[1]);
         guest.setLastName(fields[2]);
         guest.setGuestEmail(fields[3]);

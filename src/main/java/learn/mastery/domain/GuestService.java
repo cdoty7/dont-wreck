@@ -20,4 +20,8 @@ public class GuestService {
     public List<Guest> findAll() throws DataAccessException {
         return repository.findAll();
     }
+
+    public Guest findByEmail(String guestEmail) throws DataAccessException {
+        return repository.findByEmail(guestEmail);
+    }
 }

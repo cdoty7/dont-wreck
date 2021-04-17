@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Repository
 public class HostFileRepository implements HostRepository{
@@ -19,17 +20,16 @@ public class HostFileRepository implements HostRepository{
     private final String filePath;
     private final String delimiter = ",";
 
-    public HostFileRepository(@Value("${hostFilePath}")String filePath) {
+    public HostFileRepository(@Value("${hostFilePath}") String filePath) {
         this.filePath = filePath;
     }
-
     @Override
     public List<Host> findAll() throws DataAccessException {
         List<Host> hosts = new ArrayList<>();
         try(BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             reader.readLine();
             for (String line =reader.readLine(); line != null; line = reader.readLine()){
-                String[] fields = line.split(delimiter);
+                String[] fields = line.split(delimiter, -1);
 
                 if (fields.length == 10){
                     hosts.add(deserialize(fields));
@@ -50,7 +50,7 @@ public class HostFileRepository implements HostRepository{
 
     public Host findByEmail(String hostEmail) throws DataAccessException {
         return findAll().stream()
-                .filter(host ->host.getHostEmail().equals(hostEmail))
+                .filter(host -> host.getHostEmail().equals(hostEmail))
                 .findFirst()
                 .orElse(null);
     }

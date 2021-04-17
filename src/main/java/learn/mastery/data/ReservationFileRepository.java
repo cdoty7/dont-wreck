@@ -99,7 +99,7 @@ public class ReservationFileRepository implements ReservationRepository{
                 reservation.getReservationId(),
                 reservation.getStartDate(),
                 reservation.getEndDate(),
-                reservation.getGuestId(),
+                reservation.getGuest().getGuestId(),
                 reservation.getTotal());
     }
 

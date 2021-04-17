@@ -50,7 +50,9 @@ public class View {
     }
 
     public String promptGuestEmail(){
-        return null;
+        displayMessage("Guest Email: ");
+        String guestEmail = console.next();
+        return guestEmail;
     }
 
     public void displayHeader(String message){

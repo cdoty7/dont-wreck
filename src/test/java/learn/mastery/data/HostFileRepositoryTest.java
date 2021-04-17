@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -32,5 +33,13 @@ class HostFileRepositoryTest {
     void shouldFindAll() throws DataAccessException {
         List<Host> all = repository.findAll();
         assertEquals(1000, all.size());
+    }
+
+    @Test
+    void findByEmailShouldFindHost() throws DataAccessException {
+        Host host = repository.findByEmail("eyearnes0@sfgate.com");
+        List<Host> hosts = new ArrayList<>();
+        hosts.add(host);
+        assertEquals(1, hosts.size());
     }
 }

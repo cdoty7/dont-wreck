@@ -27,6 +27,14 @@ public class HostRepositoryDouble implements HostRepository{
                 .orElse(null);
     }
 
+    @Override
+    public Host findByEmail(String hostEmail) throws DataAccessException {
+        return findAll().stream()
+                .filter(host -> host.getHostEmail().equals(hostEmail))
+                .findFirst()
+                .orElse(null);
+    }
+
     private static Host makeHost() {
         Host host = new Host();
         host.setHostId(UUID.fromString("2e72f86c-b8fe-4265-b4f1-304dea8762db"));
