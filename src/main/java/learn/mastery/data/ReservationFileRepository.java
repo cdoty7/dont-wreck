@@ -23,8 +23,6 @@ public class ReservationFileRepository implements ReservationRepository{
     private final String header = "id,start_date,end_date,guest_id,total";
     private final String directory;
 
-
-
     public ReservationFileRepository(@Value("${reservationFilePath}") String directory) {
         this.directory = directory;
     }

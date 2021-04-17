@@ -5,6 +5,8 @@ import learn.mastery.data.HostRepository;
 import learn.mastery.model.Host;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class HostService {
@@ -17,4 +19,9 @@ public class HostService {
     public List<Host> findAll() throws DataAccessException {
         return repository.findAll();
     }
+
+    public Host findByEmail(String hostEmail) throws DataAccessException {
+        return repository.findByEmail(hostEmail);
+    }
+
 }

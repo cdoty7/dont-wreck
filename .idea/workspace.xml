@@ -6,15 +6,31 @@
   <component name="ChangeListManager">
     <list default="true" id="de50cb77-d274-456c-b548-2d7a8e518f46" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/reservation_test_data/2e72f86c-b8fe-4265-b4f1-304dea8762db.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/reservation_test_data/2e72f86c-b8fe-4265-b4f1-304dea8762db.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/data/HostFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/data/HostFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/data/HostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/data/HostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/data/ReservationFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/data/ReservationFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/HostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/HostService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/ReservationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/data/ReservationFileRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/data/HostFileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/data/HostFileRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/data/HostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/data/HostRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/domain/HostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/domain/HostService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/domain/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/domain/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/learn/mastery/data/ReservationFileRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/learn/mastery/data/ReservationFileRepositoryTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,91 +44,101 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sustainable-Foraging" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Ryvian\Desktop\dont_wreck\src\data" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="learn.mastery.domain" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="learn.mastery.data" />
       <recent name="learn.mastery.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ReservationFileRepositoryTest">
-    <configuration name="ReservationFileRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ReservationServiceTest.editReservationShouldNotUpdateIfEndDateIsBeforeStartDate">
+    <configuration name="ReservationServiceTest.addReservationShouldNotAddIfEndDateMissing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dont_wreck" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="learn.mastery.data.*" />
+          <option name="PATTERN" value="learn.mastery.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="learn.mastery.data" />
-      <option name="MAIN_CLASS_NAME" value="learn.mastery.data.ReservationFileRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReservationFileRepositoryTest.addReservationShouldAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dont_wreck" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="learn.mastery.data.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="learn.mastery.data" />
-      <option name="MAIN_CLASS_NAME" value="learn.mastery.data.ReservationFileRepositoryTest" />
-      <option name="METHOD_NAME" value="addReservationShouldAdd" />
+      <option name="PACKAGE_NAME" value="learn.mastery.domain" />
+      <option name="MAIN_CLASS_NAME" value="learn.mastery.domain.ReservationServiceTest" />
+      <option name="METHOD_NAME" value="addReservationShouldNotAddIfEndDateMissing" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservationFileRepositoryTest.cancelReservationShouldDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReservationServiceTest.addReservationShouldNotAddIfGuestMissing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dont_wreck" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="learn.mastery.data.*" />
+          <option name="PATTERN" value="learn.mastery.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="learn.mastery.data" />
-      <option name="MAIN_CLASS_NAME" value="learn.mastery.data.ReservationFileRepositoryTest" />
-      <option name="METHOD_NAME" value="cancelReservationShouldDelete" />
+      <option name="PACKAGE_NAME" value="learn.mastery.domain" />
+      <option name="MAIN_CLASS_NAME" value="learn.mastery.domain.ReservationServiceTest" />
+      <option name="METHOD_NAME" value="addReservationShouldNotAddIfGuestMissing" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservationFileRepositoryTest.editReservationShouldUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReservationServiceTest.addReservationShouldNotAddIfStartDateMissing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dont_wreck" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="learn.mastery.data.*" />
+          <option name="PATTERN" value="learn.mastery.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="learn.mastery.data" />
-      <option name="MAIN_CLASS_NAME" value="learn.mastery.data.ReservationFileRepositoryTest" />
+      <option name="PACKAGE_NAME" value="learn.mastery.domain" />
+      <option name="MAIN_CLASS_NAME" value="learn.mastery.domain.ReservationServiceTest" />
+      <option name="METHOD_NAME" value="addReservationShouldNotAddIfStartDateMissing" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservationServiceTest.editReservationShouldNotUpdateIfEndDateIsBeforeStartDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dont_wreck" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.mastery.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="learn.mastery.domain" />
+      <option name="MAIN_CLASS_NAME" value="learn.mastery.domain.ReservationServiceTest" />
+      <option name="METHOD_NAME" value="editReservationShouldNotUpdateIfEndDateIsBeforeStartDate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservationServiceTest.editReservationShouldUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dont_wreck" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.mastery.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="learn.mastery.domain" />
+      <option name="MAIN_CLASS_NAME" value="learn.mastery.domain.ReservationServiceTest" />
       <option name="METHOD_NAME" value="editReservationShouldUpdate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReservationFileRepositoryTest.viewReservationsByHostShouldFindReservations" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dont_wreck" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="learn.mastery.data.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="learn.mastery.data" />
-      <option name="MAIN_CLASS_NAME" value="learn.mastery.data.ReservationFileRepositoryTest" />
-      <option name="METHOD_NAME" value="viewReservationsByHostShouldFindReservations" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -120,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ReservationFileRepositoryTest" />
-        <item itemvalue="JUnit.ReservationFileRepositoryTest.addReservationShouldAdd" />
-        <item itemvalue="JUnit.ReservationFileRepositoryTest.cancelReservationShouldDelete" />
-        <item itemvalue="JUnit.ReservationFileRepositoryTest.editReservationShouldUpdate" />
-        <item itemvalue="JUnit.ReservationFileRepositoryTest.viewReservationsByHostShouldFindReservations" />
+        <item itemvalue="JUnit.ReservationServiceTest.editReservationShouldNotUpdateIfEndDateIsBeforeStartDate" />
+        <item itemvalue="JUnit.ReservationServiceTest.editReservationShouldUpdate" />
+        <item itemvalue="JUnit.ReservationServiceTest.addReservationShouldNotAddIfEndDateMissing" />
+        <item itemvalue="JUnit.ReservationServiceTest.addReservationShouldNotAddIfGuestMissing" />
+        <item itemvalue="JUnit.ReservationServiceTest.addReservationShouldNotAddIfStartDateMissing" />
       </list>
     </recent_temporary>
   </component>

@@ -18,27 +18,43 @@ public class ReservationService {
 
     private final ReservationRepository reservationRepository;
     private final HostRepository hostRepository;
-    Host host;
 
     public ReservationService(ReservationRepository reservationRepository, HostRepository hostRepository) {
         this.reservationRepository = reservationRepository;
         this.hostRepository = hostRepository;
     }
 
+
     public List<Reservation> viewReservationsByHost(UUID hostId) throws DataAccessException {
         return reservationRepository.viewReservationsByHost(hostId);
     }
 
-    public Result addReservation(Reservation reservation) {
-        return null;
+    public Result addReservation(Reservation reservation, UUID hostId) throws DataAccessException {
+        Result result = validate(reservation);
+
+        if(result.isSuccess()) {
+            calculateTotal(reservation, hostId);
+            reservation = reservationRepository.addReservation(reservation);
+            result.setReservation(reservation);
+        }
+
+        return result;
     }
 
-    public Result editReservation(Reservation reservation) {
-        return null;
+    public Result editReservation(Reservation reservation) throws DataAccessException {
+        Result result = validate(reservation);
+
+        if (result.isSuccess()){
+            reservationRepository.editReservation(reservation);
+            result.setReservation(reservation);
+
+        }
+        return result;
     }
 
-    public boolean delete(Reservation reservation) {
-        return false;
+    public boolean cancelReservation(Reservation reservation) throws DataAccessException {
+        reservationRepository.cancelReservation(reservation);
+        return true;
     }
 
     private Result validate(Reservation reservation) throws DataAccessException {
@@ -52,11 +68,19 @@ public class ReservationService {
             result.addErrorMessage("Guest email is required.");
         }
         //Host has no reservations
-        if(reservationRepository.viewReservationsByHost(host.getHostId()).size() == 0){
+        if(reservationRepository.viewReservationsByHost(reservation.getHostId()).size() == 0){
             result.addErrorMessage("Host has no reservations.");
         }
+        //No start date entered
+        if(reservation.getStartDate() == null) {
+            result.addErrorMessage("Start date required.");
+        }
+        //No end date entered
+        if(reservation.getEndDate() == null) {
+            result.addErrorMessage("End date required.");
+        }
         //Start date entered is before end date
-        if(reservation.getEndDate().isBefore(reservation.getEndDate())) {
+        if(reservation.getEndDate().isBefore(reservation.getStartDate())) {
             result.addErrorMessage("Start date must be before end date.");
         }
         //Start of reservation overlaps with existing reservation
@@ -64,20 +88,21 @@ public class ReservationService {
         return result;
     }
 
-    private BigDecimal calculateTotal(Reservation reservation) {
+    public BigDecimal calculateTotal(Reservation reservation, UUID hostId) throws DataAccessException {
+        Host host = hostRepository.findById(hostId);
         BigDecimal standardRate = new BigDecimal(String.valueOf(host.getStandardRate()));
         BigDecimal weekendRate = new BigDecimal(String.valueOf(host.getWeekendRate()));
         LocalDate start = reservation.getStartDate();
         LocalDate end = reservation.getEndDate();
-        BigDecimal totalWeekday = null;
-        BigDecimal totalWeekend = null;
+        BigDecimal totalWeekday = new BigDecimal("0");
+        BigDecimal totalWeekend = new BigDecimal("0");
 
         for (; start.compareTo(end) < 0; start = start.plusDays(1)) {
             if (start.getDayOfWeek() != DayOfWeek.FRIDAY && start.getDayOfWeek() != DayOfWeek.SATURDAY) {
-                totalWeekday = totalWeekday.add(host.getStandardRate());
+                totalWeekday = totalWeekday.add(standardRate);
             }
             if (start.getDayOfWeek() == DayOfWeek.FRIDAY || start.getDayOfWeek() == DayOfWeek.SATURDAY) {
-                totalWeekend = totalWeekend.add(host.getWeekendRate());
+                totalWeekend = totalWeekend.add(weekendRate);
             }
         }
         return totalWeekday.add(totalWeekend);

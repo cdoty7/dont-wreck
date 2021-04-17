@@ -41,6 +41,20 @@ public class HostFileRepository implements HostRepository{
         return hosts;
     }
 
+    public Host findById(UUID hostId) throws DataAccessException {
+        return findAll().stream()
+                .filter(host -> host.getHostId().equals(hostId))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public Host findByEmail(String hostEmail) throws DataAccessException {
+        return findAll().stream()
+                .filter(host ->host.getHostEmail().equals(hostEmail))
+                .findFirst()
+                .orElse(null);
+    }
+
     private Host deserialize(String[] fields) {
         Host host = new Host();
         host.setHostId(UUID.fromString(fields[0]));
