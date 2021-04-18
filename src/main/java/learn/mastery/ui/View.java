@@ -24,7 +24,6 @@ public class View {
     }
 
     public void displayReservations(List<Reservation> reservations, String hostLastName, String hostCity, String hostState) {
-        Reservation reservation = new Reservation();
         System.out.printf("%s: %s, %s%n",
                 hostLastName,
                 hostCity,
@@ -34,14 +33,15 @@ public class View {
             System.out.println("No reservations found.");
             return;
         }
-        for (Reservation r : reservations) {
-            System.out.printf("ID: %s, %s - %s, Guest: %s, %s, Email: %s, Total: %s%n",
+        for (Reservation reservation : reservations) {
+            System.out.printf("ID: %s, %s - %s, Guest: %s, Total: %s%n",
                     reservation.getReservationId(),
                     reservation.getStartDate(),
                     reservation.getEndDate(),
-                    reservation.getGuest().getLastName(),
-                    reservation.getGuest().getFirstName(),
-                    reservation.getGuest().getGuestEmail(),
+//                    reservation.getGuest().getLastName(),
+//                    reservation.getGuest().getFirstName(),
+//                    reservation.getGuest().getGuestEmail(),
+                    reservation.getGuestId(),
                     reservation.getTotal());
         }
     }

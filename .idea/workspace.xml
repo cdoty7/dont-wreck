@@ -6,23 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="abb6a715-b03f-4c98-9f33-05eb80c3c199" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/guests-seed.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/guests-test.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hosts-seed.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hosts-test.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/reservation_test_data/2e72f86c-b8fe-4265-b4f1-304dea8762db.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/seed-2e72f86c-b8fe-4265-b4f1-304dea8762db.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/data/GuestFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/data/GuestFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/data/HostFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/data/HostFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/ReservationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/learn/mastery/domain/ReservationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/mastery/domain/ReservationServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/data/GuestFileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/data/GuestFileRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/data/HostFileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/data/HostFileRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/ui/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/ui/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/ui/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/ui/View.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +33,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sustainable-Foraging" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../don't_wreck2/dont_wreck" />
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -92,5 +76,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
