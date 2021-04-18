@@ -1,8 +1,10 @@
 package learn.mastery.domain;
 
 import learn.mastery.data.DataAccessException;
+import learn.mastery.data.GuestRepository;
 import learn.mastery.data.HostRepository;
 import learn.mastery.data.ReservationRepository;
+import learn.mastery.model.Guest;
 import learn.mastery.model.Host;
 import learn.mastery.model.Reservation;
 import org.springframework.stereotype.Service;
@@ -11,17 +13,21 @@ import java.math.BigDecimal;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class ReservationService {
 
     private final ReservationRepository reservationRepository;
     private final HostRepository hostRepository;
+    private final GuestRepository guestRepository;
 
-    public ReservationService(ReservationRepository reservationRepository, HostRepository hostRepository) {
+    public ReservationService(ReservationRepository reservationRepository, HostRepository hostRepository, GuestRepository guestRepository) {
         this.reservationRepository = reservationRepository;
         this.hostRepository = hostRepository;
+        this.guestRepository = guestRepository;
     }
 
 

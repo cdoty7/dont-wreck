@@ -1,7 +1,7 @@
 package learn.mastery.domain;
 
 import learn.mastery.data.DataAccessException;
-import learn.mastery.data.HostRepository;
+import learn.mastery.data.GuestRepositoryDouble;
 import learn.mastery.data.HostRepositoryDouble;
 import learn.mastery.data.ReservationRepositoryDouble;
 import learn.mastery.model.Guest;
@@ -11,14 +11,13 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ReservationServiceTest {
 
-    ReservationService service = new ReservationService(new ReservationRepositoryDouble(), new HostRepositoryDouble());
+    ReservationService service = new ReservationService(new ReservationRepositoryDouble(), new HostRepositoryDouble(), new GuestRepositoryDouble());
     final UUID hostId = UUID.fromString("2e72f86c-b8fe-4265-b4f1-304dea8762db");
 
     @Test

@@ -1,21 +1,14 @@
 package learn.mastery.ui;
 
 import learn.mastery.data.DataAccessException;
-import learn.mastery.domain.GuestService;
-import learn.mastery.domain.HostService;
-import learn.mastery.domain.ReservationService;
-import learn.mastery.domain.Result;
-import learn.mastery.model.Guest;
-import learn.mastery.model.Host;
-import learn.mastery.model.Reservation;
+import learn.mastery.domain.*;
+import learn.mastery.model.*;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Scanner;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Component
 public class Controller {
@@ -70,8 +63,12 @@ public class Controller {
         view.displayHeader("View Reservations for Host");
         Host host = getHost();
         UUID hostId = host.getHostId();
+        String hostLastName = host.getLastName();
+        String hostCity = host.getCity();
+        String hostState = host.getState();
+
         List<Reservation> reservations = reservationService.viewReservationsByHost(hostId);
-        view.displayReservations(reservations);
+        view.displayReservations(reservations, hostLastName, hostCity, hostState);
 
         Boolean isRunning = true;
     }
@@ -81,10 +78,8 @@ public class Controller {
         Host host = getHost();
         UUID hostId = host.getHostId();
 
-        Guest guest = getGuest();
 
-        List<Reservation> reservations = reservationService.viewReservationsByHost(hostId);
-        view.displayReservations(reservations); //need to only display reservation for specific guest
+        getReservationsForGuest(hostId);
         String input = "";
 
         do {
@@ -112,11 +107,7 @@ public class Controller {
         view.displayHeader("Edit Reservation");
         Host host = getHost();
         UUID hostId = host.getHostId();
-
-        Guest guest = getGuest();
-
-        List<Reservation> reservations = reservationService.viewReservationsByHost(hostId);
-        view.displayReservations(reservations); //need to only display reservation for specific guest
+        getReservationsForGuest(hostId);
 
         int reservationId = view.promptReservationId();
         view.displayMessage("Editing reservation " + reservationId);
@@ -146,14 +137,9 @@ public class Controller {
 
     public void cancelReservation() throws DataAccessException {
         view.displayHeader("Delete Reservation");
-        view.displayHeader("Edit Reservation");
         Host host = getHost();
         UUID hostId = host.getHostId();
-
-        Guest guest = getGuest();
-
-        List<Reservation> reservations = reservationService.viewReservationsByHost(hostId);
-        view.displayReservations(reservations); //need to only display reservation for specific guest
+        getReservationsForGuest(hostId);
 
         int reservationId = view.promptReservationId();
         Reservation reservation = new Reservation();
@@ -172,5 +158,15 @@ public class Controller {
     private Guest getGuest() throws DataAccessException {
         String guestEmail = view.promptGuestEmail();
         return guestService.findByEmail(guestEmail);
+    }
+
+    private void getReservationsForGuest(UUID hostId) throws DataAccessException {
+        Guest guest = getGuest();
+        String guestId = guest.getGuestId();
+
+        List<Reservation> reservations = reservationService.viewReservationsByHost(hostId);
+        reservations.stream()
+                .filter(reservation -> reservation.getGuestId().equals(guestId))
+                .collect(Collectors.toList());
     }
 }

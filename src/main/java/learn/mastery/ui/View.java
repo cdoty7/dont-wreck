@@ -1,13 +1,10 @@
 package learn.mastery.ui;
 
-import learn.mastery.model.Guest;
-import learn.mastery.model.Host;
-import learn.mastery.model.Reservation;
+import learn.mastery.model.*;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 @Component
 public class View {
@@ -26,21 +23,26 @@ public class View {
         return input;
     }
 
-    public void displayReservations(List<Reservation> reservations) {
-        Host host = new Host();
-        Guest guest = new Guest();
-        System.out.printf("%s: %s, %s",
-                host.getLastName(),
-                host.getCity(),
-                host.getState());
-        for (Reservation reservation : reservations) {
-            System.out.printf("ID: %s, %s - %s, Guest: %s, %s, Email: %s",
+    public void displayReservations(List<Reservation> reservations, String hostLastName, String hostCity, String hostState) {
+        Reservation reservation = new Reservation();
+        System.out.printf("%s: %s, %s%n",
+                hostLastName,
+                hostCity,
+                hostState);
+
+        if(reservations == null || reservations.isEmpty()){
+            System.out.println("No reservations found.");
+            return;
+        }
+        for (Reservation r : reservations) {
+            System.out.printf("ID: %s, %s - %s, Guest: %s, %s, Email: %s, Total: %s%n",
                     reservation.getReservationId(),
                     reservation.getStartDate(),
                     reservation.getEndDate(),
-                    guest.getLastName(),
-                    guest.getFirstName(),
-                    guest.getGuestEmail());
+                    reservation.getGuest().getLastName(),
+                    reservation.getGuest().getFirstName(),
+                    reservation.getGuest().getGuestEmail(),
+                    reservation.getTotal());
         }
     }
 
