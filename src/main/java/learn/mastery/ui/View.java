@@ -24,24 +24,20 @@ public class View {
     }
 
     public void displayReservations(List<Reservation> reservations, String hostLastName, String hostCity, String hostState) {
+        Guest guest = new Guest();
         System.out.printf("%s: %s, %s%n",
                 hostLastName,
                 hostCity,
                 hostState);
 
-        if(reservations == null || reservations.isEmpty()){
-            System.out.println("No reservations found.");
-            return;
-        }
         for (Reservation reservation : reservations) {
-            System.out.printf("ID: %s, %s - %s, Guest: %s, Total: %s%n",
+            System.out.printf("ID: %s, %s - %s, Guest: %s, %s, Email: %s, Total: %s%n",
                     reservation.getReservationId(),
                     reservation.getStartDate(),
                     reservation.getEndDate(),
-//                    reservation.getGuest().getLastName(),
-//                    reservation.getGuest().getFirstName(),
-//                    reservation.getGuest().getGuestEmail(),
-                    reservation.getGuestId(),
+                    guest.getLastName(),
+                    guest.getFirstName(),
+                    guest.getGuestEmail(),
                     reservation.getTotal());
         }
     }
