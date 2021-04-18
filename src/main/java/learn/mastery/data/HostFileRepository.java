@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -26,6 +27,7 @@ public class HostFileRepository implements HostRepository{
     @Override
     public List<Host> findAll() throws DataAccessException {
         List<Host> hosts = new ArrayList<>();
+
         try(BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             reader.readLine();
             for (String line =reader.readLine(); line != null; line = reader.readLine()){
@@ -36,7 +38,8 @@ public class HostFileRepository implements HostRepository{
                 }
             }
         } catch (IOException ex){
-            throw new DataAccessException("Could not open file at: " + filePath, ex);
+//            throw new DataAccessException("Could not open file at: " + filePath, ex);
+            ex.printStackTrace();
         }
         return hosts;
     }

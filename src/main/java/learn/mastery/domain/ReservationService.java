@@ -25,8 +25,7 @@ public class ReservationService {
     }
 
 
-    public List<Reservation> viewReservationsByHost(Host host) throws DataAccessException {
-        UUID hostId = host.getHostId();
+    public List<Reservation> viewReservationsByHost(UUID hostId) throws DataAccessException {
         return reservationRepository.viewReservationsByHost(hostId);
     }
 

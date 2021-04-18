@@ -5,6 +5,7 @@ import learn.mastery.model.Host;
 import learn.mastery.model.Reservation;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
@@ -53,6 +54,24 @@ public class View {
         displayMessage("Guest Email: ");
         String guestEmail = console.next();
         return guestEmail;
+    }
+
+    public LocalDate promptStartDate(){
+        displayMessage("Reservation Start Date: ");
+        LocalDate startDate= LocalDate.parse(console.next());
+        return startDate;
+    }
+
+    public LocalDate promptEndDate(){
+        displayMessage("Reservation End Date: ");
+        LocalDate endDate= LocalDate.parse(console.next());
+        return endDate;
+    }
+
+    public int promptReservationId(){
+        displayMessage("Reservation ID: ");
+        int reservationId = Integer.parseInt(console.next());
+        return reservationId;
     }
 
     public void displayHeader(String message){
