@@ -23,4 +23,8 @@ public class GuestRepositoryDouble implements GuestRepository {
     public Guest findByEmail(String guestEmail) throws DataAccessException {
         return guest;
     }
+
+    public Guest findById(String guestId) throws DataAccessException  {
+        return guest;
+    }
 }

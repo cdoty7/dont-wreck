@@ -24,4 +24,8 @@ public class GuestService {
     public Guest findByEmail(String guestEmail) throws DataAccessException {
         return repository.findByEmail(guestEmail);
     }
+
+    public Guest findById(String guestId) throws DataAccessException {
+        return repository.findById(guestId);
+    }
 }

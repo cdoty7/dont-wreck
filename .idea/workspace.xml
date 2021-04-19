@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="abb6a715-b03f-4c98-9f33-05eb80c3c199" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/data/GuestFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/data/GuestFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/data/GuestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/data/GuestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/GuestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/GuestService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/learn/mastery/data/GuestRepositoryDouble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/mastery/data/GuestRepositoryDouble.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

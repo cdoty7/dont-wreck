@@ -71,7 +71,8 @@ public class Controller {
 
         Guest guest = new Guest();
         for (Reservation reservation : reservations) {
-            guest = reservation.getGuest();
+            String guestId = reservation.getGuestId();
+            guest = guestService.findById(guestId);
         }
 
         view.displayReservations(reservations, hostLastName, hostCity, hostState, guest);
