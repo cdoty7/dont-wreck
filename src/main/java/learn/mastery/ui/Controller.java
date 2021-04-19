@@ -68,7 +68,13 @@ public class Controller {
         String hostState = host.getState();
 
         List<Reservation> reservations = reservationService.viewReservationsByHost(hostId);
-        view.displayReservations(reservations, hostLastName, hostCity, hostState);
+
+        Guest guest = new Guest();
+        for (Reservation reservation : reservations) {
+            guest = reservation.getGuest();
+        }
+
+        view.displayReservations(reservations, hostLastName, hostCity, hostState, guest);
 
         Boolean isRunning = true;
     }

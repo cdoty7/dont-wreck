@@ -23,8 +23,7 @@ public class View {
         return input;
     }
 
-    public void displayReservations(List<Reservation> reservations, String hostLastName, String hostCity, String hostState) {
-        Guest guest = new Guest();
+    public void displayReservations(List<Reservation> reservations, String hostLastName, String hostCity, String hostState, Guest guest) {
         System.out.printf("%s: %s, %s%n",
                 hostLastName,
                 hostCity,
