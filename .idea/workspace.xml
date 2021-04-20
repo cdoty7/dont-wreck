@@ -7,24 +7,14 @@
     <list default="true" id="abb6a715-b03f-4c98-9f33-05eb80c3c199" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/reservation_test_data/2e72f86c-b8fe-4265-b4f1-304dea8762db.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/reservation_test_data/2e72f86c-b8fe-4265-b4f1-304dea8762db.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/reservations/2e72f86c-b8fe-4265-b4f1-304dea8762db.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/reservations/2e72f86c-b8fe-4265-b4f1-304dea8762db.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/data/ReservationFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/data/ReservationFileRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/ReservationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/model/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/model/Reservation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/learn/mastery/data/GuestFileRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/mastery/data/GuestFileRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/learn/mastery/data/HostFileRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/mastery/data/HostFileRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/learn/mastery/data/ReservationFileRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/mastery/data/ReservationFileRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/learn/mastery/data/ReservationRepositoryDouble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/mastery/data/ReservationRepositoryDouble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/learn/mastery/domain/ReservationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/mastery/domain/ReservationServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/data/ReservationFileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/data/ReservationFileRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/domain/ReservationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/domain/ReservationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/model/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/model/Reservation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/ui/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/ui/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/ui/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/ui/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/learn/mastery/data/ReservationFileRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/learn/mastery/data/ReservationFileRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/learn/mastery/data/ReservationRepositoryDouble.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/learn/mastery/data/ReservationRepositoryDouble.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/learn/mastery/domain/ReservationServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/learn/mastery/domain/ReservationServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +42,21 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="JUnit.learn.mastery in dont_wreck">
-    <configuration name="ReservationFileRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ReservationServiceTest.addReservationShouldNotAddIfEndDateMissing">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="learn.mastery.App" />
+      <module name="dont_wreck" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.mastery.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservationFileRepositoryTest.editReservationShouldUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dont_wreck" />
       <extension name="coverage">
         <pattern>
@@ -63,22 +66,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="learn.mastery.data" />
       <option name="MAIN_CLASS_NAME" value="learn.mastery.data.ReservationFileRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReservationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dont_wreck" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="learn.mastery.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="learn.mastery.domain" />
-      <option name="MAIN_CLASS_NAME" value="learn.mastery.domain.ReservationServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="editReservationShouldUpdate" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,11 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReservationServiceTest.addReservationShouldNotAddIfEndDateMissing" />
+        <item itemvalue="JUnit.ReservationFileRepositoryTest.editReservationShouldUpdate" />
+        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.learn.mastery in dont_wreck" />
         <item itemvalue="JUnit.learn.mastery.data in dont_wreck" />
-        <item itemvalue="JUnit.ReservationServiceTest" />
-        <item itemvalue="JUnit.ReservationServiceTest.addReservationShouldNotAddIfEndDateMissing" />
-        <item itemvalue="JUnit.ReservationFileRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -164,9 +153,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/learn/mastery/domain/ReservationService.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/main/java/learn/mastery/data/ReservationFileRepository.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/learn/mastery/data/ReservationFileRepository.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/learn/mastery/data/ReservationFileRepository.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

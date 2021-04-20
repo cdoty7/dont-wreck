@@ -48,7 +48,7 @@ class ReservationFileRepositoryTest {
         Guest guest = new Guest();
         Host host = new Host();
         List<Reservation> all = repository.viewReservationsByHost(hostId);
-        reservation.setHostId(hostId);
+        reservation.getHost().setHostId(hostId);
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
@@ -64,11 +64,16 @@ class ReservationFileRepositoryTest {
     @Test
     void editReservationShouldUpdate() throws DataAccessException {
         Reservation reservation = new Reservation();
-        reservation.setHostId(hostId);
+        Host host = new Host();
+        host.setHostId(hostId);
+        reservation.setHost(host);
         reservation.setReservationId(1);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
-        reservation.getGuest().setGuestId("400");
+
+        Guest guest = new Guest();
+        guest.setGuestId("400");
+        reservation.setGuest(guest);
         reservation.setTotal(new BigDecimal("500"));
 
         boolean actual = repository.editReservation(reservation);
@@ -78,7 +83,7 @@ class ReservationFileRepositoryTest {
     @Test
     void cancelReservationShouldDelete() throws DataAccessException {
         Reservation reservation = new Reservation();
-        reservation.setHostId(hostId);
+        reservation.getHost().setHostId(hostId);
         reservation.setReservationId(12);
         boolean actual = repository.cancelReservation(reservation);
 

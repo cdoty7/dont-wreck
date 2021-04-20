@@ -127,18 +127,19 @@ public class Controller {
         view.displayReservations(reservations, hostLastName, hostCity, hostState);
 
         int reservationId = view.promptReservationId();
-        view.displayMessage("Editing reservation " + reservationId);
+        view.displayMessage("Editing reservation " + reservation.getReservationId());
         String input = "";
 
         do {
             LocalDate startDate = view.promptStartDate();
             LocalDate endDate = view.promptStartDate();
-            reservation = new Reservation(host, startDate, endDate, guest);
+            reservation = new Reservation(host, reservationId, startDate, endDate, guest);
             BigDecimal total = new BigDecimal(String.valueOf(reservationService.calculateTotal(reservation)));
 
             view.displayHeader("Summary");
             view.displayMessage("Start: " + startDate);
             view.displayMessage("End: " + endDate);
+            view.displayMessage("Total: $" + total);
             view.displayMessage("Is this ok? [y/n]: ");
             input = console.next();
         }while(input.equalsIgnoreCase("n"));
@@ -153,12 +154,19 @@ public class Controller {
 
     public void cancelReservation() throws DataAccessException {
         view.displayHeader("Delete Reservation");
+        Reservation reservation = new Reservation();
         Host host = getHost();
         UUID hostId = host.getHostId();
-        reservationService.viewReservationsByHost(hostId);
+        String hostLastName = host.getLastName();
+        String hostCity = host.getCity();
+        String hostState = host.getState();
 
-        int reservationId = view.promptReservationId();
-        Reservation reservation = new Reservation();
+        reservationService.viewReservationsByHost(hostId);
+        List<Reservation> reservations = reservationService.viewReservationsByHost(hostId);
+        view.displayReservations(reservations, hostLastName, hostCity, hostState);
+
+        reservation.setReservationId(view.promptReservationId());
+        reservation.setHost(host);
         boolean result = reservationService.cancelReservation(reservation);
 
         if (result) {

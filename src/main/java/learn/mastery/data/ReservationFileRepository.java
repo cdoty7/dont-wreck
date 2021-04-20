@@ -48,7 +48,7 @@ public class ReservationFileRepository implements ReservationRepository{
 
     @Override
     public Reservation addReservation(Reservation reservation) throws DataAccessException {
-        List<Reservation> all = viewReservationsByHost(reservation.getHostId());
+        List<Reservation> all = viewReservationsByHost(reservation.getHost().getHostId());
 
         int nextId = all.stream()
                 .mapToInt(Reservation::getReservationId)
@@ -58,18 +58,18 @@ public class ReservationFileRepository implements ReservationRepository{
         reservation.setReservationId(nextId);
 
         all.add(reservation);
-        writeAll(all, reservation.getHostId());
+        writeAll(all, reservation.getHost().getHostId());
         return reservation;
     }
 
     @Override
     public boolean editReservation(Reservation reservation) throws DataAccessException {
-        List <Reservation> all = viewReservationsByHost(reservation.getHostId());
+        List <Reservation> all = viewReservationsByHost(reservation.getHost().getHostId());
 
         for (int i = 0; i < all.size(); i++) {
             if(all.get(i).getReservationId() == reservation.getReservationId()) {
                 all.set(i, reservation);
-                writeAll(all, reservation.getHostId());
+                writeAll(all, reservation.getHost().getHostId());
                 return true;
             }
         }
@@ -78,12 +78,12 @@ public class ReservationFileRepository implements ReservationRepository{
 
     @Override
     public boolean cancelReservation(Reservation reservation) throws DataAccessException {
-        List <Reservation> all = viewReservationsByHost(reservation.getHostId());
+        List <Reservation> all = viewReservationsByHost(reservation.getHost().getHostId());
 
         for (int i = 0; i < all.size(); i++) {
             if(all.get(i).getReservationId() == reservation.getReservationId()) {
                 all.remove(i);
-                writeAll(all, reservation.getHostId());
+                writeAll(all, reservation.getHost().getHostId());
                 return true;
             }
         }

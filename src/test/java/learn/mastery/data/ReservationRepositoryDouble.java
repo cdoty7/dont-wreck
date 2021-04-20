@@ -20,7 +20,7 @@ public class ReservationRepositoryDouble implements ReservationRepository {
         Host host = new Host();
         host.setStandardRate(new BigDecimal("150"));
         host.setWeekendRate(new BigDecimal("150"));
-        reservation.setHostId(hostId);
+        reservation.getHost().setHostId(hostId);
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
@@ -32,7 +32,7 @@ public class ReservationRepositoryDouble implements ReservationRepository {
 
     public List<Reservation> viewReservationsByHost(UUID hostId) throws DataAccessException {
         return reservations.stream()
-                .filter(reservation -> reservation.getHostId().equals(hostId))
+                .filter(reservation -> reservation.getHost().getHostId().equals(hostId))
                 .collect(Collectors.toList());
     }
 

@@ -6,7 +6,6 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 public class Reservation {
-    private UUID hostId;
     private Host host;
     private int reservationId;
     private LocalDate startDate;
@@ -19,6 +18,14 @@ public class Reservation {
 
     public Reservation(Host host, LocalDate startDate, LocalDate endDate, Guest guest) {
         this.host = host;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.guest = guest;
+    }
+
+    public Reservation(Host host, int reservationId, LocalDate startDate, LocalDate endDate, Guest guest) {
+        this.host = host;
+        this.reservationId = reservationId;
         this.startDate = startDate;
         this.endDate = endDate;
         this.guest = guest;
@@ -54,14 +61,6 @@ public class Reservation {
 
     public void setTotal(BigDecimal total) {
         this.total = total;
-    }
-
-    public UUID getHostId() {
-        return hostId;
-    }
-
-    public void setHostId(UUID hostId) {
-        this.hostId = hostId;
     }
 
     public Host getHost() {

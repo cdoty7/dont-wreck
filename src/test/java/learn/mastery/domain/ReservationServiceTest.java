@@ -27,7 +27,7 @@ class ReservationServiceTest {
         Guest guest = new Guest();
         host.setStandardRate(new BigDecimal("150"));
         host.setWeekendRate(new BigDecimal("150"));
-        reservation.setHostId(hostId);
+        reservation.getHost().setHostId(hostId);
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
@@ -44,7 +44,7 @@ class ReservationServiceTest {
         Guest guest = new Guest();
         host.setStandardRate(new BigDecimal("150"));
         host.setWeekendRate(new BigDecimal("150"));
-        reservation.setHostId(hostId);
+        reservation.getHost().setHostId(hostId);
         reservation.setReservationId(13);
         reservation.setStartDate(null);
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
@@ -60,7 +60,7 @@ class ReservationServiceTest {
         Host host = new Host();
         host.setStandardRate(new BigDecimal("150"));
         host.setWeekendRate(new BigDecimal("150"));
-        reservation.setHostId(hostId);
+        reservation.getHost().setHostId(hostId);
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.getGuest().setGuestId("400");
@@ -75,7 +75,7 @@ class ReservationServiceTest {
         Host host = new Host();
         host.setStandardRate(new BigDecimal("150"));
         host.setWeekendRate(new BigDecimal("150"));
-        reservation.setHostId(hostId);
+        reservation.getHost().setHostId(hostId);
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
@@ -89,7 +89,7 @@ class ReservationServiceTest {
     void editReservationShouldUpdate() throws DataAccessException {
         Reservation reservation = new Reservation();
         Host host = new Host();
-        reservation.setHostId(hostId);
+        reservation.getHost().setHostId(hostId);
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 9));
@@ -102,7 +102,7 @@ class ReservationServiceTest {
     void editReservationShouldNotUpdateIfEndDateIsBeforeStartDate() throws DataAccessException {
         Reservation reservation = new Reservation();
         Host host = new Host();
-        reservation.setHostId(hostId);
+        reservation.getHost().setHostId(hostId);
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 4));

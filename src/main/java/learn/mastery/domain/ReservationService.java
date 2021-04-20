@@ -36,10 +36,9 @@ public class ReservationService {
         for (Reservation reservation : reservations) {
             String guestId = reservation.getGuest().getGuestId();
             reservation.setGuest(guestRepository.findById(guestId));
-        }
-        for (Reservation reservation : reservations) {
             reservation.setHost(hostRepository.findById(hostId));
         }
+
         return reservations;
     }
 
@@ -47,7 +46,7 @@ public class ReservationService {
         Result result = validate(reservation);
 
         if(result.isSuccess()) {
-            calculateTotal(reservation);
+            reservation.setTotal(calculateTotal(reservation));
             reservation = reservationRepository.addReservation(reservation);
             result.setReservation(reservation);
         }
@@ -59,6 +58,7 @@ public class ReservationService {
         Result result = validate(reservation);
 
         if (result.isSuccess()){
+            reservation.setTotal(calculateTotal(reservation));
             reservationRepository.editReservation(reservation);
             result.setReservation(reservation);
 
@@ -74,7 +74,7 @@ public class ReservationService {
     private Result validate(Reservation reservation) throws DataAccessException {
         Result result = new Result();
         //No host email entered
-        if(reservation.getHostId() == null) {
+        if(reservation.getHost().getHostId() == null) {
             result.addErrorMessage("Host email is required.");
         }
         //No guest email entered
@@ -82,7 +82,7 @@ public class ReservationService {
             result.addErrorMessage("Guest email is required.");
         }
         //Host has no reservations
-        if(reservationRepository.viewReservationsByHost(reservation.getHostId()).size() == 0){
+        if(reservationRepository.viewReservationsByHost(reservation.getHost().getHostId()).size() == 0){
             result.addErrorMessage("Host has no reservations.");
         }
         //No start date entered
