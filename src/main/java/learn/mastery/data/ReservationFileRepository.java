@@ -110,8 +110,8 @@ public class ReservationFileRepository implements ReservationRepository{
         reservation.setEndDate(LocalDate.parse(fields[2]));
 
         Guest guest = new Guest();
-        guest.setFirstName(fields[2]);
-        guest.setLastName(fields[3]);
+        guest.setGuestId(fields[3]);
+        reservation.setGuest(guest);
 
         reservation.setTotal(new BigDecimal(fields[4]));
 

@@ -1,5 +1,7 @@
 package learn.mastery.data;
 
+import learn.mastery.model.Guest;
+import learn.mastery.model.Host;
 import learn.mastery.model.Reservation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,9 +20,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ReservationFileRepositoryTest {
 
-    static final String SEED_FILE_PATH = "src/data/seed-2e72f86c-b8fe-4265-b4f1-304dea8762db.csv";
-    static final String TEST_FILE_PATH = "src/data/reservation_test_data/2e72f86c-b8fe-4265-b4f1-304dea8762db.csv";
-    static final String TEST_DIR_PATH = "src/data/reservation_test_data";
+    static final String SEED_FILE_PATH = "./data/seed-2e72f86c-b8fe-4265-b4f1-304dea8762db.csv";
+    static final String TEST_FILE_PATH = "./data/reservation_test_data/2e72f86c-b8fe-4265-b4f1-304dea8762db.csv";
+    static final String TEST_DIR_PATH = "./data/reservation_test_data";
 
 
     final UUID hostId = UUID.fromString("2e72f86c-b8fe-4265-b4f1-304dea8762db");
@@ -43,15 +45,18 @@ class ReservationFileRepositoryTest {
     @Test
     void addReservationShouldAdd() throws DataAccessException {
         Reservation reservation = new Reservation();
+        Guest guest = new Guest();
+        Host host = new Host();
+        List<Reservation> all = repository.viewReservationsByHost(hostId);
         reservation.setHostId(hostId);
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
-        reservation.setGuestId("400");
+        guest.setGuestId("400");
         reservation.setTotal(new BigDecimal("500"));
 
         reservation = repository.addReservation(reservation);
-        List<Reservation> all = repository.viewReservationsByHost(hostId);
+
 
         assertEquals(13, all.size());
     }
@@ -63,6 +68,7 @@ class ReservationFileRepositoryTest {
         reservation.setReservationId(1);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
+        reservation.getGuest().setGuestId("400");
         reservation.setTotal(new BigDecimal("500"));
 
         boolean actual = repository.editReservation(reservation);

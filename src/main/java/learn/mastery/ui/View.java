@@ -23,7 +23,7 @@ public class View {
         return input;
     }
 
-    public void displayReservations(List<Reservation> reservations, String hostLastName, String hostCity, String hostState, Guest guest) {
+    public void displayReservations(List<Reservation> reservations, String hostLastName, String hostCity, String hostState) {
         System.out.printf("%s: %s, %s%n",
                 hostLastName,
                 hostCity,
@@ -34,9 +34,9 @@ public class View {
                     reservation.getReservationId(),
                     reservation.getStartDate(),
                     reservation.getEndDate(),
-                    guest.getLastName(),
-                    guest.getFirstName(),
-                    guest.getGuestEmail(),
+                    reservation.getGuest().getLastName(),
+                    reservation.getGuest().getFirstName(),
+                    reservation.getGuest().getGuestEmail(),
                     reservation.getTotal());
         }
     }

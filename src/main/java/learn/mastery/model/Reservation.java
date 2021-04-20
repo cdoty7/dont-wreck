@@ -12,8 +12,17 @@ public class Reservation {
     private LocalDate startDate;
     private LocalDate endDate;
     private Guest guest;
-    private String guestId;
     private BigDecimal total;
+
+    public Reservation() {
+    }
+
+    public Reservation(Host host, LocalDate startDate, LocalDate endDate, Guest guest) {
+        this.host = host;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.guest = guest;
+    }
 
     public int getReservationId() {
         return reservationId;
@@ -69,13 +78,5 @@ public class Reservation {
 
     public void setGuest(Guest guest) {
         this.guest = guest;
-    }
-
-    public String getGuestId() {
-        return guestId;
-    }
-
-    public void setGuestId(String guestId) {
-        this.guestId = guestId;
     }
 }

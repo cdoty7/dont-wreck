@@ -31,7 +31,7 @@ class ReservationServiceTest {
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
-        reservation.setGuestId("400");
+        reservation.getGuest().setGuestId("400");
 
         Result result = service.addReservation(reservation, hostId);
         assertTrue(result.isSuccess());
@@ -48,7 +48,7 @@ class ReservationServiceTest {
         reservation.setReservationId(13);
         reservation.setStartDate(null);
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
-        reservation.setGuestId("400");
+        reservation.getGuest().setGuestId("400");
 
         Result result = service.addReservation(reservation, hostId);
         assertFalse(result.isSuccess());
@@ -63,7 +63,7 @@ class ReservationServiceTest {
         reservation.setHostId(hostId);
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
-        reservation.setGuestId("400");
+        reservation.getGuest().setGuestId("400");
 
         Result result = service.addReservation(reservation, hostId);
         assertFalse(result.isSuccess());
@@ -79,7 +79,7 @@ class ReservationServiceTest {
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
-        reservation.setGuestId("");
+        reservation.getGuest().setGuestId("");
 
         Result result = service.addReservation(reservation, hostId);
         assertFalse(result.isSuccess());
@@ -93,7 +93,7 @@ class ReservationServiceTest {
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 9));
-        reservation.setGuestId("400");
+        reservation.getGuest().setGuestId("400");
         Result result = service.editReservation(reservation);
         assertTrue(result.isSuccess());
     }
@@ -106,12 +106,8 @@ class ReservationServiceTest {
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 4));
-        reservation.setGuestId("400");
+        reservation.getGuest().setGuestId("400");
         Result result = service.editReservation(reservation);
         assertFalse(result.isSuccess());
-    }
-
-    @Test
-    void delete() {
     }
 }

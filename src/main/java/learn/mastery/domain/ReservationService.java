@@ -32,14 +32,22 @@ public class ReservationService {
 
 
     public List<Reservation> viewReservationsByHost(UUID hostId) throws DataAccessException {
-        return reservationRepository.viewReservationsByHost(hostId);
+        List <Reservation> reservations = reservationRepository.viewReservationsByHost(hostId);
+        for (Reservation reservation : reservations) {
+            String guestId = reservation.getGuest().getGuestId();
+            reservation.setGuest(guestRepository.findById(guestId));
+        }
+        for (Reservation reservation : reservations) {
+            reservation.setHost(hostRepository.findById(hostId));
+        }
+        return reservations;
     }
 
     public Result addReservation(Reservation reservation, UUID hostId) throws DataAccessException {
         Result result = validate(reservation);
 
         if(result.isSuccess()) {
-            calculateTotal(reservation, hostId);
+            calculateTotal(reservation);
             reservation = reservationRepository.addReservation(reservation);
             result.setReservation(reservation);
         }
@@ -94,10 +102,9 @@ public class ReservationService {
         return result;
     }
 
-    public BigDecimal calculateTotal(Reservation reservation, UUID hostId) throws DataAccessException {
-        Host host = hostRepository.findById(hostId);
-        BigDecimal standardRate = new BigDecimal(String.valueOf(host.getStandardRate()));
-        BigDecimal weekendRate = new BigDecimal(String.valueOf(host.getWeekendRate()));
+    public BigDecimal calculateTotal(Reservation reservation) throws DataAccessException {
+        BigDecimal standardRate = new BigDecimal(String.valueOf(reservation.getHost().getStandardRate()));
+        BigDecimal weekendRate = new BigDecimal(String.valueOf(reservation.getHost().getWeekendRate()));
         LocalDate start = reservation.getStartDate();
         LocalDate end = reservation.getEndDate();
         BigDecimal totalWeekday = new BigDecimal("0");

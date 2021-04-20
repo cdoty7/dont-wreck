@@ -24,7 +24,7 @@ public class ReservationRepositoryDouble implements ReservationRepository {
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
-        reservation.setGuestId("400");
+        reservation.getGuest().setGuestId("400");
 
 
         reservations.add(reservation);
