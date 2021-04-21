@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -40,6 +41,19 @@ public class ReservationService {
         }
 
         return reservations;
+    }
+
+    public List<Reservation> viewReservationsForGuest(Host host, Guest guest) throws DataAccessException {
+        List <Reservation> reservations = reservationRepository.viewReservationsByHost(host.getHostId());
+        List<Reservation> reservationsForGuest = new ArrayList<>();
+        for (Reservation reservation : reservations) {
+            String guestId = reservation.getGuest().getGuestId();
+            reservation.setGuest(guestRepository.findById(guestId));
+            if (reservation.getGuest().getGuestId().equals(guest.getGuestId())) {
+                reservationsForGuest.add(reservation);
+            }
+        }
+        return reservationsForGuest;
     }
 
     public Result addReservation(Reservation reservation) throws DataAccessException {

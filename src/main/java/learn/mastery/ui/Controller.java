@@ -95,7 +95,7 @@ public class Controller {
         Host host = getHost();
         Guest guest = getGuest();
 
-        List<Reservation> reservations = reservationService.viewReservationsByHost(host.getHostId());
+        List<Reservation> reservations = reservationService.viewReservationsForGuest(host, guest);
         view.displayReservations(reservations, host);
 
         int reservationId = view.promptReservationId();
@@ -115,9 +115,9 @@ public class Controller {
         view.displayHeader("Delete Reservation");
         Reservation reservation = new Reservation();
         Host host = getHost();
+        Guest guest = getGuest();
 
-        reservationService.viewReservationsByHost(host.getHostId());
-        List<Reservation> reservations = reservationService.viewReservationsByHost(host.getHostId());
+        List<Reservation> reservations = reservationService.viewReservationsForGuest(host, guest);
         view.displayReservations(reservations, host);
 
         reservation.setReservationId(view.promptReservationId());
@@ -131,12 +131,7 @@ public class Controller {
 
     private Host getHost() throws DataAccessException {
         String hostEmail = view.promptHostEmail();
-        Host host = hostService.findByEmail(hostEmail);
-        UUID hostId = host.getHostId();
-        String hostLastName = host.getLastName();
-        String hostCity = host.getCity();
-        String hostState = host.getState();
-        return host;
+        return hostService.findByEmail(hostEmail);
     }
 
     private Guest getGuest() throws DataAccessException {

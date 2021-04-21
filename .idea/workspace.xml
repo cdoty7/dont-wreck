@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abb6a715-b03f-4c98-9f33-05eb80c3c199" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/reservation_test_data/2e72f86c-b8fe-4265-b4f1-304dea8762db.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/reservation_test_data/2e72f86c-b8fe-4265-b4f1-304dea8762db.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/domain/ReservationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/mastery/ui/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/learn/mastery/data/ReservationFileRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/mastery/data/ReservationFileRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/learn/mastery/data/ReservationRepositoryDouble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/mastery/data/ReservationRepositoryDouble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/learn/mastery/domain/ReservationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/mastery/domain/ReservationServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/learn/mastery/data/ReservationFileRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/learn/mastery/data/ReservationFileRepositoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/domain/ReservationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/domain/ReservationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/learn/mastery/ui/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/learn/mastery/ui/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/learn/mastery/domain/ReservationServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/learn/mastery/domain/ReservationServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -39,7 +38,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="learn.mastery.domain" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="learn.mastery.domain" />
+      <recent name="learn.mastery.data" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -55,34 +68,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservationFileRepositoryTest.addReservationShouldAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GuestFileRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dont_wreck" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="learn.mastery.data.*" />
+          <option name="PATTERN" value="learn.mastery.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="learn.mastery.data" />
-      <option name="MAIN_CLASS_NAME" value="learn.mastery.data.ReservationFileRepositoryTest" />
-      <option name="METHOD_NAME" value="addReservationShouldAdd" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="learn.mastery.data.GuestFileRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservationFileRepositoryTest.editReservationShouldUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HostFileRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dont_wreck" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="learn.mastery.data.*" />
+          <option name="PATTERN" value="learn.mastery.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="learn.mastery.data" />
+      <option name="MAIN_CLASS_NAME" value="learn.mastery.data.HostFileRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservationFileRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dont_wreck" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.mastery.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="learn.mastery.data" />
       <option name="MAIN_CLASS_NAME" value="learn.mastery.data.ReservationFileRepositoryTest" />
-      <option name="METHOD_NAME" value="editReservationShouldUpdate" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,29 +128,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservationServiceTest.addReservationShouldNotAddIfEndDateMissing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dont_wreck" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="learn.mastery.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="learn.mastery.domain" />
-      <option name="MAIN_CLASS_NAME" value="learn.mastery.domain.ReservationServiceTest" />
-      <option name="METHOD_NAME" value="addReservationShouldNotAddIfEndDateMissing" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
         <item itemvalue="JUnit.ReservationServiceTest" />
-        <item itemvalue="JUnit.ReservationFileRepositoryTest.addReservationShouldAdd" />
-        <item itemvalue="JUnit.ReservationServiceTest.addReservationShouldNotAddIfEndDateMissing" />
-        <item itemvalue="JUnit.ReservationFileRepositoryTest.editReservationShouldUpdate" />
+        <item itemvalue="JUnit.GuestFileRepositoryTest" />
+        <item itemvalue="JUnit.HostFileRepositoryTest" />
+        <item itemvalue="JUnit.ReservationFileRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -152,10 +162,19 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/dont_wreck$ReservationServiceTest.ic" NAME="ReservationServiceTest Coverage Results" MODIFIED="1618876942490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/dont_wreck$ReservationFileRepositoryTest_viewReservationsByHostShouldFindReservations.ic" NAME="ReservationFileRepositoryTest.viewReservationsByHostShouldFindReservations Coverage Results" MODIFIED="1619036314468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>learn.mastery.data.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/dont_wreck$GuestFileRepositoryTest.ic" NAME="GuestFileRepositoryTest Coverage Results" MODIFIED="1619036390835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>learn.mastery.data.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/dont_wreck$ReservationServiceTest.ic" NAME="ReservationServiceTest Coverage Results" MODIFIED="1619036414325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>learn.mastery.domain.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/dont_wreck$ReservationFileRepositoryTest.ic" NAME="ReservationFileRepositoryTest Coverage Results" MODIFIED="1618876805373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/dont_wreck$ReservationFileRepositoryTest.ic" NAME="ReservationFileRepositoryTest Coverage Results" MODIFIED="1619036331708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>learn.mastery.data.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/dont_wreck$HostFileRepositoryTest.ic" NAME="HostFileRepositoryTest Coverage Results" MODIFIED="1619036371770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>learn.mastery.data.*</FILTER>
     </SUITE>
   </component>
