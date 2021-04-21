@@ -26,10 +26,10 @@ public class Controller {
         this.view = view;
     }
 
-    public void run(){
+    public void run() {
         boolean isRunning = true;
         view.displayHeader("Don't Wreck My House");
-        while(isRunning) {
+        while (isRunning) {
             try {
                 int input = view.mainMenu();
                 runMenu(input);
@@ -40,7 +40,7 @@ public class Controller {
         view.displayMessage("Goodbye");
     }
 
-    public void runMenu(int input) throws DataAccessException{
+    public void runMenu(int input) throws DataAccessException {
         if (input > 0) {
             switch (input) {
                 case 1:
@@ -62,15 +62,11 @@ public class Controller {
     public void viewReservationsByHost() throws DataAccessException {
         view.displayHeader("View Reservations for Host");
         Host host = getHost();
-        UUID hostId = host.getHostId();
-        String hostLastName = host.getLastName();
-        String hostCity = host.getCity();
-        String hostState = host.getState();
 
-        List<Reservation> reservations = reservationService.viewReservationsByHost(hostId);
+        List<Reservation> reservations = reservationService.viewReservationsByHost(host.getHostId());
         Guest guest = new Guest();
 
-        view.displayReservations(reservations, hostLastName, hostCity, hostState);
+        view.displayReservations(reservations, host);
 
         Boolean isRunning = true;
     }
@@ -79,33 +75,14 @@ public class Controller {
         view.displayHeader("Add Reservation");
         Reservation reservation = new Reservation();
         Host host = getHost();
-        UUID hostId = host.getHostId();
-        String hostLastName = host.getLastName();
-        String hostCity = host.getCity();
-        String hostState = host.getState();
-
         Guest guest = getGuest();
 
-        List<Reservation> reservations = reservationService.viewReservationsByHost(hostId);
-        view.displayReservations(reservations, hostLastName, hostCity, hostState);
+        List<Reservation> reservations = reservationService.viewReservationsByHost(host.getHostId());
+        view.displayReservations(reservations, host);
 
-        String input = "";
+        populateReservation(host, guest);
 
-        do {
-            LocalDate startDate = view.promptStartDate();
-            LocalDate endDate = view.promptEndDate();
-            reservation = new Reservation(host, startDate, endDate, guest);
-            BigDecimal total = new BigDecimal(String.valueOf(reservationService.calculateTotal(reservation)));
-
-            view.displayHeader("Summary");
-            view.displayMessage("Start: " + startDate);
-            view.displayMessage("End: " + endDate);
-            view.displayMessage("Total: $" + total);
-            view.displayMessage("Is this ok? [y/n]: ");
-            input = console.next();
-        }while(input.equalsIgnoreCase("n"));
-
-        Result result = reservationService.addReservation(reservation, hostId);
+        Result result = reservationService.addReservation(reservation);
 
         if (result.isSuccess()) {
             view.displayMessage("Reservation added.");
@@ -116,33 +93,15 @@ public class Controller {
         view.displayHeader("Edit Reservation");
         Reservation reservation = new Reservation();
         Host host = getHost();
-        UUID hostId = host.getHostId();
-        String hostLastName = host.getLastName();
-        String hostCity = host.getCity();
-        String hostState = host.getState();
-
         Guest guest = getGuest();
 
-        List<Reservation> reservations = reservationService.viewReservationsByHost(hostId);
-        view.displayReservations(reservations, hostLastName, hostCity, hostState);
+        List<Reservation> reservations = reservationService.viewReservationsByHost(host.getHostId());
+        view.displayReservations(reservations, host);
 
         int reservationId = view.promptReservationId();
         view.displayMessage("Editing reservation " + reservation.getReservationId());
-        String input = "";
 
-        do {
-            LocalDate startDate = view.promptStartDate();
-            LocalDate endDate = view.promptStartDate();
-            reservation = new Reservation(host, reservationId, startDate, endDate, guest);
-            BigDecimal total = new BigDecimal(String.valueOf(reservationService.calculateTotal(reservation)));
-
-            view.displayHeader("Summary");
-            view.displayMessage("Start: " + startDate);
-            view.displayMessage("End: " + endDate);
-            view.displayMessage("Total: $" + total);
-            view.displayMessage("Is this ok? [y/n]: ");
-            input = console.next();
-        }while(input.equalsIgnoreCase("n"));
+        populateReservation(host, guest);
 
         Result result = reservationService.editReservation(reservation);
 
@@ -156,14 +115,10 @@ public class Controller {
         view.displayHeader("Delete Reservation");
         Reservation reservation = new Reservation();
         Host host = getHost();
-        UUID hostId = host.getHostId();
-        String hostLastName = host.getLastName();
-        String hostCity = host.getCity();
-        String hostState = host.getState();
 
-        reservationService.viewReservationsByHost(hostId);
-        List<Reservation> reservations = reservationService.viewReservationsByHost(hostId);
-        view.displayReservations(reservations, hostLastName, hostCity, hostState);
+        reservationService.viewReservationsByHost(host.getHostId());
+        List<Reservation> reservations = reservationService.viewReservationsByHost(host.getHostId());
+        view.displayReservations(reservations, host);
 
         reservation.setReservationId(view.promptReservationId());
         reservation.setHost(host);
@@ -176,11 +131,35 @@ public class Controller {
 
     private Host getHost() throws DataAccessException {
         String hostEmail = view.promptHostEmail();
-        return hostService.findByEmail(hostEmail);
+        Host host = hostService.findByEmail(hostEmail);
+        UUID hostId = host.getHostId();
+        String hostLastName = host.getLastName();
+        String hostCity = host.getCity();
+        String hostState = host.getState();
+        return host;
     }
 
     private Guest getGuest() throws DataAccessException {
         String guestEmail = view.promptGuestEmail();
         return guestService.findByEmail(guestEmail);
     }
+
+    private void populateReservation(Host host, Guest guest) throws DataAccessException {
+        String input = "";
+
+        do {
+            LocalDate startDate = view.promptStartDate();
+            LocalDate endDate = view.promptEndDate();
+            Reservation reservation = new Reservation(host, startDate, endDate, guest);
+            BigDecimal total = new BigDecimal(String.valueOf(reservationService.calculateTotal(reservation)));
+
+            view.displayHeader("Summary");
+            view.displayMessage("Start: " + startDate);
+            view.displayMessage("End: " + endDate);
+            view.displayMessage("Total: $" + total);
+            view.displayMessage("Is this ok? [y/n]: ");
+            input = console.next();
+        } while (input.equalsIgnoreCase("n"));
+    }
+
 }

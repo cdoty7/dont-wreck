@@ -42,7 +42,7 @@ public class ReservationService {
         return reservations;
     }
 
-    public Result addReservation(Reservation reservation, UUID hostId) throws DataAccessException {
+    public Result addReservation(Reservation reservation) throws DataAccessException {
         Result result = validate(reservation);
 
         if(result.isSuccess()) {
@@ -75,11 +75,11 @@ public class ReservationService {
         Result result = new Result();
         //No host email entered
         if(reservation.getHost().getHostId() == null) {
-            result.addErrorMessage("Host email is required.");
+            result.addErrorMessage("Host is required.");
         }
         //No guest email entered
         if(reservation.getGuest().getGuestId() == null || reservation.getGuest().getGuestId().isEmpty()) {
-            result.addErrorMessage("Guest email is required.");
+            result.addErrorMessage("Guest is required.");
         }
         //Host has no reservations
         if(reservationRepository.viewReservationsByHost(reservation.getHost().getHostId()).size() == 0){

@@ -23,11 +23,11 @@ public class View {
         return input;
     }
 
-    public void displayReservations(List<Reservation> reservations, String hostLastName, String hostCity, String hostState) {
+    public void displayReservations(List<Reservation> reservations, Host host) {
         System.out.printf("%s: %s, %s%n",
-                hostLastName,
-                hostCity,
-                hostState);
+                host.getLastName(),
+                host.getCity(),
+                host.getState());
 
         for (Reservation reservation : reservations) {
             System.out.printf("ID: %s, %s - %s, Guest: %s, %s, Email: %s, Total: %s%n",

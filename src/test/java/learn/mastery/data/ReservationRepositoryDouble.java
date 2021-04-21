@@ -1,5 +1,6 @@
 package learn.mastery.data;
 
+import learn.mastery.model.Guest;
 import learn.mastery.model.Host;
 import learn.mastery.model.Reservation;
 
@@ -18,14 +19,16 @@ public class ReservationRepositoryDouble implements ReservationRepository {
     public ReservationRepositoryDouble() {
         Reservation reservation = new Reservation();
         Host host = new Host();
+        Guest guest = new Guest();
         host.setStandardRate(new BigDecimal("150"));
         host.setWeekendRate(new BigDecimal("150"));
-        reservation.getHost().setHostId(hostId);
+        host.setHostId(hostId);
+        reservation.setHost(host);
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
-        reservation.getGuest().setGuestId("400");
-
+        guest.setGuestId("400");
+        reservation.setGuest(guest);
 
         reservations.add(reservation);
     }

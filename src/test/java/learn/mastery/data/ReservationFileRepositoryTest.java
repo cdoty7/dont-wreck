@@ -47,14 +47,17 @@ class ReservationFileRepositoryTest {
         Reservation reservation = new Reservation();
         Guest guest = new Guest();
         Host host = new Host();
+        host.setHostId(hostId);
+        reservation.setHost(host);
         List<Reservation> all = repository.viewReservationsByHost(hostId);
-        reservation.getHost().setHostId(hostId);
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
         guest.setGuestId("400");
+        reservation.setGuest(guest);
         reservation.setTotal(new BigDecimal("500"));
 
+        all.add(reservation);
         reservation = repository.addReservation(reservation);
 
 
@@ -83,6 +86,9 @@ class ReservationFileRepositoryTest {
     @Test
     void cancelReservationShouldDelete() throws DataAccessException {
         Reservation reservation = new Reservation();
+        Host host = new Host();
+        host.setHostId(hostId);
+        reservation.setHost(host);
         reservation.getHost().setHostId(hostId);
         reservation.setReservationId(12);
         boolean actual = repository.cancelReservation(reservation);
