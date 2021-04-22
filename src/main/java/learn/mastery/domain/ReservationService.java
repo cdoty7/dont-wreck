@@ -88,11 +88,11 @@ public class ReservationService {
     private Result validate(Reservation reservation) throws DataAccessException {
         Result result = new Result();
         //No host email entered
-        if(reservation.getHost().getHostId() == null) {
+        if(reservation.getHost() == null || reservation.getHost().getHostId() == null) {
             result.addErrorMessage("Host is required.");
         }
         //No guest email entered
-        if(reservation.getGuest().getGuestId() == null || reservation.getGuest().getGuestId().isEmpty()) {
+        if(reservation.getGuest() == null || reservation.getGuest().getGuestId() == null || reservation.getGuest().getGuestId().isEmpty()) {
             result.addErrorMessage("Guest is required.");
         }
         //Host has no reservations
@@ -108,7 +108,7 @@ public class ReservationService {
             result.addErrorMessage("End date required.");
         }
         //Start date entered is before end date
-        if(reservation.getEndDate().isBefore(reservation.getStartDate())) {
+        if((reservation.getStartDate() != null) && (reservation.getEndDate() != null) && (reservation.getEndDate().isBefore(reservation.getStartDate()))) {
             result.addErrorMessage("Start date must be before end date.");
         }
         //Start of reservation overlaps with existing reservation

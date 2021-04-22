@@ -79,6 +79,7 @@ class ReservationServiceTest {
     void addReservationShouldNotAddIfGuestMissing() throws DataAccessException {
         Reservation reservation = new Reservation();
         Host host = new Host();
+        Guest guest = new Guest();
         host.setStandardRate(new BigDecimal("150"));
         host.setWeekendRate(new BigDecimal("150"));
         host.setHostId(hostId);
@@ -86,7 +87,7 @@ class ReservationServiceTest {
         reservation.setReservationId(13);
         reservation.setStartDate(LocalDate.of(2021, 5, 6));
         reservation.setEndDate(LocalDate.of(2021, 5, 7));
-
+        reservation.setGuest(guest);
         Result result = service.addReservation(reservation);
         assertFalse(result.isSuccess());
     }
